@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>larratin.com</title>
+  <style>
+    /* Градиентный фон страницы */
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1d4747 0% );
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+    }
+
+    /* Анимация фона (плавная смена градиента) */
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Кнопка */
+    .btn {
+      padding: 16px 32px;
+      font-size: 18px;
+      color: rgb(0, 0, 0);
+      text-decoration: none;
+      border-radius: 20px;           /* сильно скруглённые края */
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      transition: all 0.3s ease;
+      background: linear-gradient(135deg, #ff0000 0%, #682626 100%);
+    }
+
+    /* Эффект при наведении: увеличение + тень + чуть другой градиент */
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+      background: linear-gradient(135deg, #ff0000 0%, #682626 100%);
+    }
+
+    /* Эффект при нажатии: сжатие + уменьшение тени */
+    .btn:active {
+      transform: scale(0.95);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Опционально: небольшая анимация текста внутри кнопки */
+    .btn span {
+        display:block;
+      transition: transform 0.3s ease;
+    }
+   .btn span:first-child {
+      font-weight: 700;
+      font-size: 28px;       /* большой размер */
+      margin-bottom: -1px;     /* чуть больше отступ */
+      letter-spacing: 0.1px;  /* чуть шире буквы — выглядит солиднее */
+    }
+
+    .btn span:last-child {
+      font-size: 16px;
+      opacity: 0.9;
+      margin-top: -4px;     /* подтягиваем вверх */
+    }
+
+    .btn:hover span {
+      transform: translateX(5px);
+    }
+  </style>
+</head>
+<body>
+  <button class="btn" id="ytBtn">
+ <span><b>for smart ppl only</b></span>
+  </button>
+  <script>
+    const channelUrl = 'https://youtu.be/-CJnekVXaNU';
+
+    document.getElementById('ytBtn').addEventListener('click', () => {
+      window.open(channelUrl, '_self'); 
+    });
+  </script>
+</body>
+</html>
